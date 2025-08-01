@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hari Girlfriend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Halaman Pembuka -->
+  <div id="landing" class="landing-screen">
+    <h1>💗 Selamat Hari Girlfriend Sayang 💗</h1>
+    <p>
+      Maaf telat akuu ngucapinnyaa hehe, akuu ada kilas balik tau buat kenang
+      masa masa kitaa coba pencet...🌸
+    </p>
+    <button onclick="startStory()">Lihat Kisahnya</button>
+  </div>
+
+  <!-- Cerita Pertama Kali Ketemu -->
+  <div id="story" class="story-screen hidden">
+    <!-- Audio di luar video -->
+    <audio id="bg-music" loop>
+      <source src="image/n.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <h2>✨ Ini Momen Pertama Kita ✨</h2>
+
+    <video src="image/pertama.mp4" autoplay muted playsinline loop class="photo"></video>
+
+    <p class="narration">
+      Maaf aku vidio in nya ga jelas hehee. Kamu aku jemput di Stasiun Cimahi,
+      tapi entah gimana hari itu kamu cantikk banget terus kamu pertama kali
+      senyum ke aku sampe aku inget sampe sekarang hehe.<br /><br />
+      Terus kita ngobrol di motor biru kesayangan aku wkwk. Sebenernya aku waktu itu malu banget ditambah seneng
+      banget bisa ketemu kamuuu hehe 😳 Kita lanjut ke kenangan kita yu...
+    </p>
+
+    <div class="hearts">
+      <span>💖</span><span>💗</span><span>💘</span><span>💞</span><span>💕</span>
+    </div>
+    <button onclick="showGallery()" class="next-btn">
+      Lanjut ke Kenangan Kita 📸
+    </button>
+  </div>
+
+  <!-- Galeri Kenangan -->
+  <div id="gallery" class="gallery-screen hidden">
+    <h2>📸 Kenangan Kita 📸</h2>
+    <div class="gallery-grid">
+      <div class="photo-card">
+        <img src="image/pertamakali-pap-aku.jpg" alt="Momen 1" />
+        <p>
+          Ini pertama kali kamu ngirim pap ke aku. Disini aku seneng banget bisa dapet pap kamu terus aku
+          pikir mimpi apaa ya bisa dapet pap dari cinderella entah dari kerajaan mana hahaha.
+        </p>
+      </div>
+      <div class="photo-card">
+        <img src="image/pertama-potbar.jpg" alt="Momen 2" />
+        <p>
+          Nah disinii pertama kali kita fotbar, meskipun mata kamu lagi alergi gara-gara debu tapi tetep
+          cantik koo hehee.
+        </p>
+      </div>
+      <div class="photo-card">
+        <img src="image/terakhir-fotbar .jpg" alt="Momen 3" />
+        <p>
+          Nah terus ini terakhir kali kita fotbar lagi sebelum kamu ke Tasik dan ada problem yang aku ga mau
+          ulang lagi. Di sini kamu abis pulang kerja tetep maksain ketemu aku, makasih yaa sayangg. 💖
+        </p>
+      </div>
+      <div class="photo-card">
+        <img src="image/pap-baru-ini.jpg" alt="Momen 4" />
+        <p>
+          Nahh ini dia pap kamu setelah kita baikan. Kalo ditanya soal cantikan mana ya jelas kecantikan
+          kamu itu nggak pernah berkurang sedikitpun dari awal sampe sekarang.
+        </p>
+      </div>
+    </div>
+    <button onclick="showMessage()" class="next-btn">Pesan Dari Aku 💌</button>
+  </div>
+
+  <!-- Pesan Penutup -->
+  <div id="message" class="message-screen hidden">
+    <h2>💌 Buat Kamu yaa Nazwaa Desriaa yang aku sayangg 💌</h2>
+    <p class="message-text">
+      Terima kasih udah jadi bagian dari hidup aku.<br /><br />
+      Maaf kalau kadang aku ngeselin atau bikin kamu bete 😅<br /><br />
+      Tapi percaya deh... aku selalu sayang kamu, dan bakal terus berjuang buat hubungan ini 💖<br /><br />
+      Kamu itu hadiah terbaik yang pernah aku dapet. Dan aku nggak mau kehilangan kamu, oke? Dan ada satu lagi,
+      jangan selalu sedih :'<br /><br />Aku tau kamu sekarang lagi di posisi terrendah kamu tapi aku yakin kamu pasti
+      bisa ngelewatinya. Semangat ya cantikk kamu itu nggak sendiri sayang, ada aku yang selalu support kamu
+      gimana pun keadaannya. Jangan mikir hidup kamu nggak berguna, kamu itu berguna kok. Semangat aja, ada aku
+      selalu untuk kamu sayang, meskipun aku kadang suka nyari masalah bikin kamu kesel badmood. Tapi percaya
+      sayang, aku beruntung bisa kenal sama kamu. Aku yakin meskipun nanti hubungan kita gimana ke depannya,
+      aku selalu doain semoga berujung baik. Kita jalanin aja dulu bareng-bareng, saling ngertiin, ilangin ego,
+      huhuu jadi pengen nangis wkwk. Udah ah itu aja dari aku, I love you sayangku 💗
+    </p>
+    <div class="hearts">
+      <span>💖</span><span>💗</span><span>💘</span><span>💞</span><span>💕</span>
+    </div>
+  </div>
+
+  <script>
+    function startStory() {
+      document.getElementById("landing").classList.add("hidden");
+      document.getElementById("story").classList.remove("hidden");
+      const audio = document.getElementById("bg-music");
+      audio.play();
+    }
+
+    function showGallery() {
+      document.getElementById("story").classList.add("hidden");
+      document.getElementById("gallery").classList.remove("hidden");
+    }
+
+    function showMessage() {
+      document.getElementById("gallery").classList.add("hidden");
+      document.getElementById("message").classList.remove("hidden");
+    }
+  </script>
+</body>
+
+</html>
